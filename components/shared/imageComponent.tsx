@@ -9,7 +9,7 @@ type imageProp = {
 export default function ImageComponent({ src, alt }: imageProp) {
   return (
     <Image
-      className="rounded-sm object-contain object-left-top aspect-auto duration-300"
+      className="rounded-sm object-contain object-top-left aspect-auto duration-300"
       src={urlFor(src).url()}
       alt={alt}
       loading="lazy"

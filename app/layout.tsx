@@ -16,12 +16,12 @@ const inter = Inter({
 });
 
 const options = {
-  title: "Victor Eke | Software Developer",
+  title: "Billy Brown | Software Developer",
   description:
-    "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
-  url: "https://victoreke.com",
+    "Billy Brown is a Software Developer with a soft spot for beautiful interfaces and clean code. He is passionate about building products that solve real problems and make people's lives easier.",
+  url: "https://billybrown.dev",
   ogImage:
-    "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
+    "https://res.cloudinary.com/dqjmfu8ju/image/upload/v1771724172/github-header-image_rywr5o.png",
 };
 
 export const metadata: Metadata = {
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "victoreke.com",
-    locale: "en-US",
+    siteName: "billybrown.dev",
+    locale: "en-GB",
     type: "website",
     description: options.description,
     images: options.ogImage,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     canonical: options.url,
   },
   other: {
-    "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
+    // "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
   },
 };
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
+    "@sanity/code-input": "^7.0.8",
     "@sanity/eslint-config-studio": "^6.0.0",
     "@sanity/table": "^2.0.1",
     "@sanity/vision": "^5.11.0",
