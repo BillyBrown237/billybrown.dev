@@ -1,19 +1,24 @@
-import { TablePreview } from "@sanity/table";
-import { PreviewProps } from "sanity";
-import { TableValueProps } from "@/types";
+import getYoutubeId from "@/utils/get-youtubeId";
+import { BiLogoYoutube } from "react-icons/bi";
+import YoutubeIframe from "@/components/shared/youtubeIframe";
 
-export function TableWidget(props: TableValueProps & PreviewProps) {
-    const { table, caption, title, ...rest } = props;
-    const tablePreviewProps = { ...rest, rows: table?.rows || [] };
+export function YoutubeWidget(props: any) {
+  const { url, actions, schemaType } = props;
+  const id = getYoutubeId(url);
 
-    return (
+  return (
+    <div className="pt-1 relative">
+      {url ? (
         <>
-            <div className="px-3">
-                <em className="not-italic text-sm font-semibold">
-                    {caption ?? "Untitled Table"}
-                </em>
-            </div>
-            <TablePreview {...tablePreviewProps} description={caption} />
+          {props.renderDefault(props)}
+          <YoutubeIframe videoId={id} />
         </>
-    );
+      ) : (
+        <div className="flex items-center justify-center gap-x-2 my-3">
+          <BiLogoYoutube className="text-[red] text-lg" />
+          <span>Add YouTube URL</span>
+        </div>
+      )}
+    </div>
+  );
 }

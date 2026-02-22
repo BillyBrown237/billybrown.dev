@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
-import { YoutubeWidget } from "@/components/widgets/youtubeWidget";
 import { FiYoutube } from "react-icons/fi";
+import { YoutubeWidget } from "@/components/widgets/youtubeWidget";
 
 export const youtube = defineType({
     name: "youtube",
