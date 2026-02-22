@@ -1,10 +1,12 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import studio from '@sanity/eslint-config-studio';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  ...studio,
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
