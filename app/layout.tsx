@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { incognito } from "@/assets/fonts/font";
 import { gitlabmono } from "@/assets/fonts/font";
-import Navbar from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Providers } from "@/providers/providers";
 import "./globals.css";
+import Navbar from "@/components/layout/header";
 
 
 const inter = Inter({
