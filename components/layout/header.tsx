@@ -5,26 +5,9 @@ import Logo from "@/public/logo.png";
 import UnmountStudio from "@/components/layout/unmountStudio";
 import Theme from "@/components/theme/theme";
 import MobileMenu from "@/components/layout/mobileMenu";
+import {DESKTOP_ROUTES} from "@/constants/navRoutes";
 
 export default function Navbar() {
-    const data = [
-        {
-            title: "About",
-            href: "/about",
-        },
-        {
-            title: "Projects",
-            href: "/projects",
-        },
-        {
-            title: "Blog",
-            href: "/blog",
-        },
-        {
-            title: "Photos",
-            href: "/photos",
-        },
-    ];
 
     return (
         <UnmountStudio>
@@ -36,7 +19,7 @@ export default function Navbar() {
 
                     <nav className="md:block hidden">
                         <ul className="flex items-center gap-x-8">
-                            {data.map((link, id) => (
+                            {DESKTOP_ROUTES.map((link, id) => (
                                 <li key={id}>
                                     <Link
                                         href={link.href}
