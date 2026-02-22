@@ -1,99 +1,60 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import {
-    HiBeaker,
-    HiBookmarkAlt,
-    HiCamera,
-    HiOutlineX,
-    HiUser,
-} from "react-icons/hi";
-import Logo from "@/public/logo.png";
 
-export default function MobileMenu() {
-    const [navShow, setNavShow] = useState(false);
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/public/logo.png";
+import UnmountStudio from "@/components/layout/unmountStudio";
+import Theme from "@/components/theme/theme";
+import MobileMenu from "@/components/layout/mobileMenu";
+
+export default function Navbar() {
     const data = [
         {
             title: "About",
             href: "/about",
-            icon: HiUser,
         },
         {
             title: "Projects",
             href: "/projects",
-            icon: HiBeaker,
         },
         {
             title: "Blog",
             href: "/blog",
-            icon: HiBookmarkAlt,
         },
         {
             title: "Photos",
             href: "/photos",
-            icon: HiCamera,
         },
     ];
 
-    const onToggleNav = () => {
-        setNavShow((status) => {
-            if (status) {
-                document.body.style.overflow = "auto";
-            } else {
-                document.body.style.overflow = "hidden";
-            }
-            return !status;
-        });
-    };
-
     return (
-        <>
-            <button
-                aria-label="Toggle Menu"
-                onClick={onToggleNav}
-                className="md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-md p-2"
-            >
-                <RxHamburgerMenu className="text-xl" />
-            </button>
-            <div
-                className={`md:hidden fixed left-0 top-0 z-10 h-full w-full transform duration-600 ease-[cubic-bezier(0.7,0,0,1)] dark:bg-zinc-900 bg-white ${
-                    navShow ? "translate-x-0 rounded-none" : "translate-x-full"
-                }`}
-            >
-                <div className="flex items-center justify-between mt-6 px-8">
-                    <Link href="/" onClick={onToggleNav}>
+        <UnmountStudio>
+            <header className="text-sm py-6 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
+                <div className="max-w-6xl mx-auto flex items-center justify-between">
+                    <Link href="/">
                         <Image src={Logo} width={35} height={35} alt="logo" />
                     </Link>
 
-                    <button
-                        aria-label="Toggle Menu"
-                        onClick={onToggleNav}
-                        className={`md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-500 ${
-                            !navShow ? "-rotate-360" : null
-                        }`}
-                    >
-                        <HiOutlineX className="text-xl" />
-                    </button>
+                    <nav className="md:block hidden">
+                        <ul className="flex items-center gap-x-8">
+                            {data.map((link, id) => (
+                                <li key={id}>
+                                    <Link
+                                        href={link.href}
+                                        className="font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
+                                    >
+                                        {link.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <div className="flex items-center gap-x-4">
+                        <Theme />
+                        <MobileMenu />
+                    </div>
                 </div>
-                <nav className="flex flex-col mt-6">
-                    {data.map((link) => (
-                        <Link
-                            key={link.title}
-                            href={link.href}
-                            className="flex items-center gap-x-2 font-incognito font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group"
-                            onClick={onToggleNav}
-                        >
-                            <link.icon
-                                className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
-                                aria-hidden="true"
-                            />
-                            {link.title}
-                        </Link>
-                    ))}
-                </nav>
-            </div>
-        </>
+            </header>
+        </UnmountStudio>
     );
 }
