@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { singleProjectQuery } from "@/lib/sanity.query";
-import type { ProjectType } from "@/types";
+import type { Project } from "@/types";
 import { PortableText } from "@portabletext/react";
-import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
-import { Slide } from "../../animation/Slide";
-import { urlFor } from "@/lib/sanity.image";
-import { sanityFetch } from "@/lib/sanity.client";
 import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
+import {sanityFetch} from "@/lib/sanity/sanity.client";
+import {singleProjectQuery} from "@/lib/sanity/sanity.query";
+import {urlFor} from "@/lib/sanity/sanity.image";
+import {Slide} from "@/components/animations/slide";
+import {CustomPortableText} from "@/components/shared/customPortableText";
 
 type Props = {
   params: {
@@ -21,7 +21,7 @@ const fallbackImage: string =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.project;
-  const project: ProjectType = await sanityFetch({
+  const project: Project = await sanityFetch({
     query: singleProjectQuery,
     tags: ["project"],
     qParams: { slug },
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project: ProjectType = await sanityFetch({
+  const project: Project = await sanityFetch({
     query: singleProjectQuery,
     tags: ["project"],
     qParams: { slug },

@@ -1,8 +1,8 @@
 "use client";
-import { motion, useInView, useAnimation, AnimationProps } from "framer-motion";
+import { motion, useInView, useAnimation, MotionProps } from "framer-motion";
 import { useRef, useEffect, RefObject } from "react";
 
-interface SlideProps extends AnimationProps {
+interface SlideProps extends MotionProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;

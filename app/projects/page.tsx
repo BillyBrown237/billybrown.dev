@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { projectsQuery } from "@/lib/sanity.query";
-import type { ProjectType } from "@/types";
-import EmptyState from "../components/shared/EmptyState";
-import { Slide } from "../animation/Slide";
-import { sanityFetch } from "@/lib/sanity.client";
-import PageHeading from "../components/shared/PageHeading";
+import type { Project } from "@/types";
+import {sanityFetch} from "@/lib/sanity/sanity.client";
+import {projectsQuery} from "@/lib/sanity/sanity.query";
+import PageHeading from "@/components/shared/pageHeading";
+import {Slide} from "@/components/animations/slide";
+import EmptyState from "@/components/shared/emptyState";
 
 export const metadata: Metadata = {
   title: "Project | Victor Eke",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Project() {
-  const projects: ProjectType[] = await sanityFetch({
+  const projects: Project[] = await sanityFetch({
     query: projectsQuery,
     tags: ["project"],
   });

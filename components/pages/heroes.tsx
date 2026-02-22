@@ -1,9 +1,9 @@
-import { heroesQuery } from "@/lib/sanity.query";
 import { Hero } from "@/types";
-import EasterEgg from "../shared/EasterEgg";
-import { Slide } from "../../animation/Slide";
-import { sanityFetch } from "@/lib/sanity.client";
 import RefLink from "@/components/shared/refLink";
+import {heroesQuery} from "@/lib/sanity/sanity.query";
+import {sanityFetch} from "@/lib/sanity/sanity.client";
+import {Slide} from "@/components/animations/slide";
+import EasterEgg from "@/components/shared/easterEgg";
 
 export default async function Heroes() {
   const heroes: Hero[] = await sanityFetch({

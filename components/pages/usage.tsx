@@ -1,8 +1,8 @@
 import { PortableText } from "@portabletext/react";
 import { profileQuery } from "@/lib/sanity/sanity.query";
 import type { Profile } from "@/types";
-import { CustomPortableTextFavicon } from "../shared/CustomPortableTextFavicon";
 import { sanityFetch } from "@/lib/sanity/sanity.client";
+import {CustomPortableTextFavicon} from "@/components/shared/customPortableTextFavicon";
 
 export default async function Usage() {
   const profile: Profile = await sanityFetch({
