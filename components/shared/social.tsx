@@ -1,12 +1,14 @@
 
-import { socialLinks } from "@/constants/social-data";
+import {SOCIAL_LINKS, SocialLinksEnum} from "@/constants/social-data";
 import RefLink from "./refLink";
 
-export default function Social({ type }: { type: "social" | "publication" }) {
+
+
+export default function Social({ type }: { type: SocialLinksEnum}) {
   return (
     <ul className="flex items-center flex-wrap gap-x-5 gap-y-4 my-10">
-      {socialLinks
-        .filter((item) => item.status === type)
+      {SOCIAL_LINKS
+        .filter((item) => item.status === type && item.isVisible)
         .map((value) => (
           <li key={value.id}>
             <RefLink

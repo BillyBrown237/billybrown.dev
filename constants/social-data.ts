@@ -15,27 +15,41 @@ import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
 import { SiCodewars } from "react-icons/si";
 import { FaHashnode, FaHashtag, FaSquareXTwitter } from "react-icons/fa6";
 
-export const socialLinks = [
+export type SocialLinksEnum = "social" | "publication";
+
+export type SocialData = {
+    id: number;
+    name: string;
+    url: string;
+    icon: React.ComponentType<{ className?: string }>;
+    status: SocialLinksEnum;
+    isVisible: boolean;
+}
+
+export const SOCIAL_LINKS: SocialData[] = [
   {
     id: 1,
     name: "GitHub",
-    url: "https://github.com/Evavic44",
+    url: "https://github.com/billybrown237",
     icon: BiLogoGithub,
     status: "social",
+    isVisible: true,
   },
   {
     id: 2,
     name: "X",
-    url: "https://twitter.com/victorekea",
+    url: "https://twitter.com/dekoubrown",
     icon: FaSquareXTwitter,
     status: "social",
+    isVisible: true,
   },
   {
     id: 3,
     name: "Linkedin",
-    url: "https://linkedin.com/in/victorekeawa",
+    url: "https://linkedin.com/in/dbillybrown",
     icon: BiLogoLinkedinSquare,
     status: "social",
+    isVisible: true,
   },
   {
     id: 4,
@@ -43,6 +57,7 @@ export const socialLinks = [
     url: "https://codepen.io/evavic44",
     icon: BiLogoCodepen,
     status: "social",
+    isVisible: false,
   },
   {
     id: 5,
@@ -50,6 +65,7 @@ export const socialLinks = [
     url: "https://dribbble.com/victoreke",
     icon: BiLogoDribbble,
     status: "social",
+    isVisible: false,
   },
   {
     id: 6,
@@ -57,6 +73,7 @@ export const socialLinks = [
     url: "https://instagram.com/victorekea",
     icon: BiLogoInstagram,
     status: "social",
+    isVisible: false,
   },
   {
     id: 7,
@@ -64,6 +81,7 @@ export const socialLinks = [
     url: "https://steamcommunity.com/id/victoreke/",
     icon: BiLogoSteam,
     status: "social",
+    isVisible: false,
   },
   {
     id: 8,
@@ -71,6 +89,7 @@ export const socialLinks = [
     url: "https://unsplash.com/@victoreke",
     icon: BiLogoUnsplash,
     status: "social",
+    isVisible: false,
   },
   {
     id: 9,
@@ -78,6 +97,7 @@ export const socialLinks = [
     url: "https://freecodecamp.org/news/author/victoreke/",
     icon: FaFreeCodeCamp,
     status: "publication",
+    isVisible: false,
   },
   {
     id: 10,
@@ -85,6 +105,7 @@ export const socialLinks = [
     url: "https://eke.hashnode.dev",
     icon: FaHashnode,
     status: "publication",
+    isVisible: false,
   },
   {
     id: 11,
@@ -92,6 +113,7 @@ export const socialLinks = [
     url: "https://www.sanity.io/exchange/community/victoreke",
     icon: FaHashtag,
     status: "publication",
+    isVisible: false,
   },
   {
     id: 12,
@@ -99,6 +121,7 @@ export const socialLinks = [
     url: "https://youtube.com/@victorekea",
     icon: BiLogoYoutube,
     status: "social",
+    isVisible: false,
   },
   {
     id: 13,
@@ -106,6 +129,7 @@ export const socialLinks = [
     url: "https://app.daily.dev/eke",
     icon: BiLinkExternal,
     status: "social",
+    isVisible: false,
   },
   {
     id: 14,
@@ -113,6 +137,7 @@ export const socialLinks = [
     url: "https://www.producthunt.com/@victorekea",
     icon: FaProductHunt,
     status: "social",
+    isVisible: false,
   },
   {
     id: 15,
@@ -120,6 +145,7 @@ export const socialLinks = [
     url: "https://stackoverflow.com/users/14021166/victor-eke",
     icon: BiLogoStackOverflow,
     status: "social",
+    isVisible: false,
   },
   {
     id: 16,
@@ -127,12 +153,14 @@ export const socialLinks = [
     url: "https://www.codewars.com/users/victoreke",
     icon: SiCodewars,
     status: "social",
+    isVisible: false,
   },
   {
     id: 17,
     name: "Gitlab",
-    url: "https://gitlab.com/victoreke",
+    url: "https://gitlab.com/billy.billybrown",
     icon: BiLogoGitlab,
     status: "social",
+    isVisible: true,
   },
 ];

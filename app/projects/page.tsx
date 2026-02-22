@@ -9,13 +9,13 @@ import {Slide} from "@/components/animations/slide";
 import EmptyState from "@/components/shared/emptyState";
 
 export const metadata: Metadata = {
-  title: "Project | Victor Eke",
-  metadataBase: new URL("https://victoreke.com/projects"),
-  description: "Explore projects built by Victor Eke",
+  title: "Project | Billy Brown",
+  metadataBase: new URL("https://billybrown.dev/projects"),
+  description: "Explore projects built by Billy Brown",
   openGraph: {
-    title: "Projects | Victor Eke",
-    url: "https://victoreke.com/projects",
-    description: "Explore projects built by Victor Eke",
+    title: "Projects | Billy Brown",
+    url: "https://billybrown.dev/projects",
+    description: "Explore projects built by Billy Brown",
     images:
       "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png",
   },
