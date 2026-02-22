@@ -1,23 +1,23 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { PostType } from "@/types";
-import { singlePostQuery } from "@/lib/sanity.query";
+import type { Post } from "@/types";
 import { PortableText, toPlainText } from "@portabletext/react";
-import { CustomPortableText } from "../../components/shared/CustomPortableText";
 import { BiChevronRight, BiSolidTime, BiTime } from "react-icons/bi";
-import { formatDate } from "../../utils/date";
-import SharePost from "../../components/shared/SharePost";
-import FeaturedPosts from "../../components/pages/FeaturedPosts";
-import { Slide } from "../../animation/Slide";
-import { urlFor } from "@/lib/sanity.image";
-import Buymeacoffee from "@/app/components/shared/Buymeacoffee";
-import Comments from "@/app/components/shared/Comments";
 import { HiCalendar, HiChat } from "react-icons/hi";
-import { sanityFetch } from "@/lib/sanity.client";
-import { readTime } from "@/app/utils/readTime";
-import PageHeading from "@/app/components/shared/PageHeading";
+import {sanityFetch} from "@/lib/sanity/sanity.client";
+import {singlePostQuery} from "@/lib/sanity/sanity.query";
+import { urlFor } from "@/lib/sanity/sanity.image";
+import {Slide} from "@/components/animations/slide";
+import {formatDate} from "@/utils/date";
+import {readTime} from "@/utils/readTime";
+import PageHeading from "@/components/shared/pageHeading";
+import SharePost from "@/components/shared/sharePost";
+import FeaturedPosts from "@/components/pages/featuredPosts";
+import Comments from "@/components/shared/comments";
+import Buymeacoffee from "@/components/shared/buyMeACoffee";
+import {CustomPortableText} from "@/components/shared/customPortableText";
 
 type Props = {
   params: {
@@ -31,7 +31,7 @@ const fallbackImage: string =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.post;
-  const post: PostType = await sanityFetch({
+  const post: Post = await sanityFetch({
     query: singlePostQuery,
     tags: ["Post"],
     qParams: { slug },
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const slug = params.post;
-  const post: PostType = await sanityFetch({
+  const post: Post = await sanityFetch({
     query: singlePostQuery,
     tags: ["Post"],
     qParams: { slug },

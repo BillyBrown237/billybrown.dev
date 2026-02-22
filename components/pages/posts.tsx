@@ -1,14 +1,14 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
-import { postsQuery } from "@/lib/sanity.query";
 import { Post } from "@/types";
 import EmptyState from "@/components/shared/emptyState";
 import { BiSolidTime, BiTime } from "react-icons/bi";
-import { formatDate } from "../../utils/date";
 import { HiCalendar } from "react-icons/hi";
-import { sanityFetch } from "@/lib/sanity.client";
-import { readTime } from "@/app/utils/readTime";
 import { toPlainText } from "@portabletext/react";
+import {sanityFetch} from "@/lib/sanity/sanity.client";
+import {postsQuery} from "@/lib/sanity/sanity.query";
+import {formatDate} from "@/utils/date";
+import {readTime} from "@/utils/readTime";
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";

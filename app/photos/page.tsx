@@ -1,7 +1,7 @@
-import { Slide } from "../animation/Slide";
 import Image from "next/image";
 import { Metadata } from "next";
-import PageHeading from "@/app/components/shared/PageHeading";
+import PageHeading from "@/components/shared/pageHeading";
+import {Slide} from "@/components/animations/slide";
 
 const images = [
   {

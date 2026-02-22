@@ -1,14 +1,14 @@
 import { PortableTextComponents } from "@portabletext/react";
 import { BiLinkExternal, BiSolidQuoteRight } from "react-icons/bi";
-import PortableImage from "./PortableImage";
-import CodeBlock from "./CodeBlock";
-import HashScroll from "./HashScroll";
-import getYoutubeId from "@/app/utils/get-youtubeId";
-import YoutubeIframe from "./YoutubeIframe";
-import RefLink from "./RefLink";
-import Table from "./Table";
 import { QuizValueProps, TableValueProps } from "@/types";
-import Quiz from "./Quiz";
+import CodeBlock from "@/components/shared/codeBlock";
+import getYoutubeId from "@/utils/get-youtubeId";
+import YoutubeIframe from "@/components/shared/youtubeIframe";
+import HashScroll from "@/components/shared/hashScroll";
+import RefLink from "@/components/shared/refLink";
+import Table from "@/components/shared/table";
+import PortableImage from "./portableImage";
+import Quiz from "@/components/shared/quiz";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {

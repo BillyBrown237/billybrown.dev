@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PortableTextComponents } from "@portabletext/react";
 import Favicon from "../../utils/favicon";
-import RefLink from "./RefLink";
+import RefLink from "@/components/shared/refLink";
 
 export const CustomPortableTextFavicon: PortableTextComponents = {
   block: {

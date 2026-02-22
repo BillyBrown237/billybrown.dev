@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { postsQuery } from "@/lib/sanity/sanity.query";
 import type { Post } from "@/types";
 import { sanityFetch } from "@/lib/sanity/sanity.client";
