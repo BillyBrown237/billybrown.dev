@@ -10,19 +10,20 @@ import Usage from "@/components/pages/usage";
 import { Slide } from "@/components/animations/slide";
 import { sanityFetch } from "@/lib/sanity/sanity.client";
 import RefLink from "@/components/shared/refLink";
+import {urlFor} from "@/lib/sanity/sanity.image";
 
 export const metadata: Metadata = {
-  title: "About | Victor Eke",
-  metadataBase: new URL("https://victoreke.com/about"),
+  title: "About | Billy Brown",
+  metadataBase: new URL("https://dekoubrown.dev/about"),
   description:
     "Learn more about my skills, experience and technical background",
   openGraph: {
-    title: "About | Victor Eke",
-    url: "https://victoreke.com/about",
+    title: "About | Billy Brown",
+    url: "https://dekoubrown.dev/about",
     description:
       "Learn more about my skills, experience and technical background",
     images:
-      "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
+      "https://res.cloudinary.com/dqjmfu8ju/image/upload/v1771724172/github-header-image_rywr5o.png",
   },
 };
 
@@ -60,16 +61,12 @@ export default async function About() {
             <Slide delay={0.1}>
               <div className="sticky top-10">
                 {profile?.profileImage.image ? (
-                  <Image
+                  <img
                     className="rounded-2xl mb-4 object-cover max-h-96 min-h-96 bg-top"
                     src={profile?.profileImage.image}
                     width={400}
                     height={400}
-                    quality={100}
                     alt={profile?.profileImage.alt}
-                    placeholder="blur"
-                    blurDataURL={profile?.profileImage.lqip}
-                    priority
                   />
                 ) : (
                   <div className="h-96 w-100 bg-zinc-500 mb-4"></div>
@@ -78,7 +75,7 @@ export default async function About() {
                 <div className="flex flex-col text-center gap-y-4">
                   <div className="flex items-center gap-x-3">
                     <RefLink
-                      href="https://www.craft.me/s/WQpQF3jrPIodXp"
+                      href={profile?.resumeURL ?? "#"}
                       className="flex items-center justify-center text-center gap-x-2 basis-[90%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-lg font-incognito font-semibold"
                     >
                       View Résumé <BiLinkExternal className="text-base" />
@@ -110,7 +107,7 @@ export default async function About() {
         <Slide delay={0.14}>
           <Usage />
         </Slide>
-        <Heroes />
+        {/*<Heroes />*/}
       </div>
     </main>
   );
