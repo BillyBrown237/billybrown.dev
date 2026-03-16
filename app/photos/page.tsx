@@ -20,11 +20,11 @@ const images = [
 
 export const metadata: Metadata = {
   title: "Photos | Billy Brown",
-  metadataBase: new URL("https://billybrown.dev/photos"),
+  metadataBase: new URL("https://dekoubrown.dev/photos"),
   description: "Explore photos taken by Billy Brown",
   openGraph: {
     title: "Photos | Billy Brown",
-    url: "https://billybrown.dev/photos",
+    url: "https://dekoubrown.dev/photos",
     description: "Explore photos taken by Billy Brown",
     images:
       "https://res.cloudinary.com/victoreke/image/upload/v1692635149/victoreke/photos.png",

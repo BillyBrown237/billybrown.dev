@@ -15,7 +15,7 @@ export default function RefLink({
 }) {
   return (
     <Link
-      href={href + "?ref=billybrown.dev"}
+      href={href + "?ref=dekoubrown.dev"}
       rel="noopener"
       target={target}
       className={className}

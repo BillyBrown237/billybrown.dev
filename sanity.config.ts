@@ -8,7 +8,7 @@ import { projectId, dataset } from "./lib/env.api";
 
 export default defineConfig({
     name: 'default',
-    title: 'billybrown.dev',
+    title: 'dekoubrown.dev',
     projectId,
     dataset,
     basePath: "/studio",

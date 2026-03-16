@@ -10,11 +10,11 @@ import EmptyState from "@/components/shared/emptyState";
 
 export const metadata: Metadata = {
   title: "Project | Billy Brown",
-  metadataBase: new URL("https://billybrown.dev/projects"),
+  metadataBase: new URL("https://dekoubrown.dev/projects"),
   description: "Explore projects built by Billy Brown",
   openGraph: {
     title: "Projects | Billy Brown",
-    url: "https://billybrown.dev/projects",
+    url: "https://dekoubrown.dev/projects",
     description: "Explore projects built by Billy Brown",
     images:
       "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png",

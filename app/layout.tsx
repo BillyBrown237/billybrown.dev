@@ -19,7 +19,7 @@ const options = {
   title: "Billy Brown | Software Developer",
   description:
     "Billy Brown is a Software Developer with a soft spot for beautiful interfaces and clean code. He is passionate about building products that solve real problems and make people's lives easier.",
-  url: "https://billybrown.dev",
+  url: "https://dekoubrown.dev",
   ogImage:
     "https://res.cloudinary.com/dqjmfu8ju/image/upload/v1771724172/github-header-image_rywr5o.png",
 };

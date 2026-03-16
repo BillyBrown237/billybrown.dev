@@ -14,12 +14,12 @@ import {urlFor} from "@/lib/sanity/sanity.image";
 
 export const metadata: Metadata = {
   title: "About | Billy Brown",
-  metadataBase: new URL("https://billybrown.dev/about"),
+  metadataBase: new URL("https://dekoubrown.dev/about"),
   description:
     "Learn more about my skills, experience and technical background",
   openGraph: {
     title: "About | Billy Brown",
-    url: "https://billybrown.dev/about",
+    url: "https://dekoubrown.dev/about",
     description:
       "Learn more about my skills, experience and technical background",
     images:
