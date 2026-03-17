@@ -10,21 +10,19 @@ import {Slide} from "@/components/animations/slide";
 import {CustomPortableText} from "@/components/shared/customPortableText";
 
 type Props = {
-  params: {
-    project: string;
-  };
+  params: Promise<{ project: string }>
 };
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png";
+  "https://res.cloudinary.com/dekoubrown/image/upload/v1692636087/victoreke/projects.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.project;
+  const slug = await params;
   const project: Project = await sanityFetch({
     query: singleProjectQuery,
     tags: ["project"],
-    qParams: { slug },
+    qParams: { slug: slug.project },
   });
 
   return {
@@ -43,11 +41,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Project({ params }: Props) {
-  const slug = params.project;
+  const slug = await params;
   const project: Project = await sanityFetch({
     query: singleProjectQuery,
     tags: ["project"],
-    qParams: { slug },
+    qParams: { slug: slug.project },
   });
 
   return (
